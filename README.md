@@ -18,7 +18,19 @@ files that are required.
 Detailed developer documentation on how to use the Java SDK as well as contact information can be found in
 the [SDK manual](https://github.com/rabobank-nederland/omnikassa-sdk-doc/blob/main/README.md).
 
+## Requirements
+
+* Java 21 (LTS) or newer. Versions up to and including 1.19.0 support Java 8 or newer.
+* Building from source requires Maven 3.6.3 or newer and a JDK 21: `mvn -B verify` from the repository root.
+
 ## Release notes
+
+### Version 1.20.0
+
+* ⚠️ The minimum required Java version is now Java 21 (LTS). The SDK is compiled with `--release 21` and no longer
+  runs on Java 8, 11 or 17. Merchants who cannot upgrade their runtime yet should stay on version 1.19.0.
+* Upgraded the build plugins and test dependencies (Mockito, EqualsVerifier, JaCoCo, Lombok) to versions that
+  support JDK 21. The public API and the runtime dependencies are unchanged.
 
 ### Version 1.19.0
 
