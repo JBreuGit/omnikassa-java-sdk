@@ -30,7 +30,10 @@ the [SDK manual](https://github.com/rabobank-nederland/omnikassa-sdk-doc/blob/ma
 * ⚠️ The minimum required Java version is now Java 21 (LTS). The SDK is compiled with `--release 21` and no longer
   runs on Java 8, 11 or 17. Merchants who cannot upgrade their runtime yet should stay on version 1.19.0.
 * Upgraded the build plugins and test dependencies (Mockito, EqualsVerifier, JaCoCo, Lombok) to versions that
-  support JDK 21. The public API and the runtime dependencies are unchanged.
+  support JDK 21. The public API is unchanged.
+* Upgraded the runtime dependencies to their current releases within the same major version: Unirest 3.14.5
+  (Apache HttpClient 4.5.14), Commons Lang 3.20.0 (fixes CVE-2025-48924), Joda-Time 2.14.3 and SLF4J API 1.7.36.
+  Commons Codec (1.22.1) is now declared as a direct dependency instead of being relied upon transitively.
 
 ### Version 1.19.0
 
