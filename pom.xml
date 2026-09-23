@@ -26,11 +26,12 @@
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
         <maven-dependency-plugin.version>3.8.1</maven-dependency-plugin.version>
 
-        <slf4j-api.version>1.7.33</slf4j-api.version>
-        <unirest-java.version>3.13.7</unirest-java.version>
-        <apache.httpcomponents.version>4.5.13</apache.httpcomponents.version>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
-        <joda-time.version>2.10.13</joda-time.version>
+        <slf4j-api.version>1.7.36</slf4j-api.version>
+        <unirest-java.version>3.14.5</unirest-java.version>
+        <apache.httpcomponents.version>4.5.14</apache.httpcomponents.version>
+        <commons-lang3.version>3.20.0</commons-lang3.version>
+        <commons-codec.version>1.22.1</commons-codec.version>
+        <joda-time.version>2.14.3</joda-time.version>
         <junit.version>4.13.2</junit.version>
         <mockito-core.version>5.23.0</mockito-core.version>
         <equalsverifier.version>4.5.2</equalsverifier.version>
@@ -75,6 +76,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
             </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
