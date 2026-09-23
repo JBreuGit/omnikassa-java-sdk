@@ -5,7 +5,7 @@
     <parent>
         <artifactId>java-sdk-parent</artifactId>
         <groupId>nl.rabobank.oss.omnikassa</groupId>
-        <version>1.19.0</version>
+        <version>1.20.0</version>
     </parent>
 
     <packaging>jar</packaging>
@@ -88,7 +88,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.38</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
@@ -96,10 +95,23 @@
     <build>
         <plugins>
             <plugin>
+                <!-- exposes ${org.mockito:mockito-core:jar} so Mockito can be attached as a Java agent (JEP 451) -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>resolve-mockito-agent</id>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>-Duser.timezone=Europe/Amsterdam ${surefireArgLine}</argLine>
+                    <argLine>-Duser.timezone=Europe/Amsterdam -Xshare:off -javaagent:${org.mockito:mockito-core:jar} ${surefireArgLine}</argLine>
                 </configuration>
             </plugin>
             <plugin>
